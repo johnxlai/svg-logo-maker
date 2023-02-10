@@ -32,5 +32,6 @@ inquirer
     // fs.writeFile(filename, JSON.stringify(data, null, '\t'), (err) =>
     //   err ? console.log(err) : console.log('Success!')
     // );
+    console.log('Generated logo.svg');
   })
   .catch((err) => console.error(err));
