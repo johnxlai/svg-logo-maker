@@ -28,10 +28,11 @@ inquirer
   .then((data) => {
     console.log(data);
     //We want to generate the svg logo here.
+    const path = './examples/svg.svg';
 
-    // fs.writeFile(filename, JSON.stringify(data, null, '\t'), (err) =>
-    //   err ? console.log(err) : console.log('Success!')
-    // );
+    fs.writeFile(path, JSON.stringify(data, null, '\t'), (err) =>
+      err ? console.log(err) : console.log('Success!')
+    );
     console.log('Generated logo.svg');
   })
   .catch((err) => console.error(err));
