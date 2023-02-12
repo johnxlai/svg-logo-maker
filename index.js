@@ -1,5 +1,6 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
+const { generateSvg } = require('./lib/generateSvg');
 
 inquirer
   .prompt([
@@ -28,11 +29,11 @@ inquirer
   .then((data) => {
     console.log(data);
     //We want to generate the svg logo here.
+    const makeSvg = generateSvg(JSON.stringify(data));
     const svgPath = './examples/svg.svg';
 
-    fs.writeFile(svgPath, JSON.stringify(data, null, '\t'), (err) =>
-      err ? console.log(err) : console.log('Success!')
+    fs.writeFile(svgPath, makeSvg, (err) =>
+      err ? console.log(err) : console.log('Generated logo.svg')
     );
-    console.log('Generated logo.svg');
   })
   .catch((err) => console.error(err));
