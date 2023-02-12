@@ -10,7 +10,7 @@ describe('Shape', () => {
   });
 
   describe('Text Length less than 3', () => {
-    it('should not exceed 3 characters', () => {
+    it('should throw error if logo text is shorter than 3', () => {
       const shape = () => new Shape('John');
       const err = new Error('Logo text cannot be more than 3 characters');
       expect(shape).toThrowError(err);
@@ -24,5 +24,19 @@ describe('Shape', () => {
       const err = new Error('Child shapes must implement a render() method');
       expect(() => shape.render()).toThrow(err);
     });
+  });
+
+  describe('Text Colour must be vaild', () => {
+    it('should throw error if text colour is not a vaild css colour', () => {
+      const shape = () => new Shape('Ted', 'NotColour');
+      const err = new Error(
+        'Please enter a vaild css color keyword or hex code'
+      );
+      expect(shape).toThrowError(err);
+    });
+  });
+
+  describe('Background Colour must be vaild', () => {
+    it('should throw error if background colour is not a vaild colour', () => {});
   });
 });
