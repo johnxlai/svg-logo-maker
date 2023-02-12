@@ -37,6 +37,12 @@ describe('Shape', () => {
   });
 
   describe('Background Colour must be vaild', () => {
-    it('should throw error if background colour is not a vaild colour', () => {});
+    it('should throw error if background colour is not a vaild colour', () => {
+      const shape = () => new Shape('Ted', '#000', 'NotColour');
+      const err = new Error(
+        'Please enter a vaild css color keyword or hex code'
+      );
+      expect(shape).toThrowError(err);
+    });
   });
 });
