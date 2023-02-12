@@ -39,7 +39,7 @@ inquirer
 
     fs.writeFile(
       svgPath,
-      generateSvg(({ logoName, textColour, logoColour } = data)),
+      generateSvg(({ logoName, textColour, logoColour, logoShape } = data)),
       (err) => (err ? console.log(err) : console.log('Generated logo.svg'))
     );
   })
