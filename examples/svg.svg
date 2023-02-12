@@ -1,6 +1,7 @@
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" width="300" height="200">
 
-    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" width="300" height="200">
-      <circle cx="50" cy="50" r="50" fill="undefined" />
-      <text x="50%" y="50%" text-anchor="middle" fill="tes" font-size="2.3rem" letter-spacing="2" dy=".3em" font-family="monospace">test</text>
-    </svg>
-    
+  <circle cx="50" cy="50" r="50" fill="green" />
+
+  <text x="50%" y="50%" text-anchor="middle" fill="re" font-size="2.3rem" letter-spacing="2" dy=".3em"
+    font-family="monospace">Jon</text>
+</svg>

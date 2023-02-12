@@ -1,6 +1,7 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 const { generateSvg } = require('./lib/generateSvg');
+const Circle = require('./lib/circle');
 
 inquirer
   .prompt([
@@ -15,25 +16,28 @@ inquirer
       message: `Please enter text colour keyword or a hexadecimal number for the logo's test color`,
     },
     {
+      type: 'input',
+      name: 'logoColour',
+      message: `Please enter a colour keyword or a hexadecimal number for the logo's background colour`,
+    },
+    {
       type: 'list',
       name: 'logoShape',
       message: `Please choose logo shape`,
       choices: ['triangle', 'circle', 'square'],
-    },
-    {
-      type: 'input',
-      name: 'logoColour',
-      message: `Please enter a colour keyword or a hexadecimal number for the logo's background colour`,
     },
   ])
   .then((data) => {
     console.log(data);
     // JSON.stringify(data);
     //We want to generate the svg logo here.
+    const { logoName, textColour, logoColour } = data;
+
+    const makeCircle = new Circle(logoName, textColour, logoColour);
 
     const svgPath = './examples/svg.svg';
 
-    fs.writeFile(svgPath, generateSvg(data), (err) =>
+    fs.writeFile(svgPath, makeCircle.render(), (err) =>
       err ? console.log(err) : console.log('Generated logo.svg')
     );
   })
