@@ -1,7 +1,6 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 const { generateSvg } = require('./lib/generateSvg');
-// const Circle = require('./lib/circle');
 
 inquirer
   .prompt([
@@ -32,8 +31,6 @@ inquirer
     // JSON.stringify(data);
     //We want to generate the svg logo here.
     // const { logoName, textColour, logoColour } = data;
-
-    // const makeCircle = new Circle(logoName, textColour, logoColour);
 
     const svgPath = './examples/svg.svg';
 
