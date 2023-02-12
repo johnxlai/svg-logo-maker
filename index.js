@@ -28,11 +28,12 @@ inquirer
   ])
   .then((data) => {
     console.log(data);
+    // JSON.stringify(data);
     //We want to generate the svg logo here.
-    const makeSvg = generateSvg(JSON.stringify(data));
+
     const svgPath = './examples/svg.svg';
 
-    fs.writeFile(svgPath, makeSvg, (err) =>
+    fs.writeFile(svgPath, generateSvg(data), (err) =>
       err ? console.log(err) : console.log('Generated logo.svg')
     );
   })
