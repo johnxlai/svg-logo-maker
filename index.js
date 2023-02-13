@@ -1,7 +1,7 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 const { generateSvg } = require('./lib/generateSvg');
-const { renderShape } = require('./lib/renderShape');
+const { makeShape } = require('./lib/makeShape');
 
 inquirer
   .prompt([
@@ -28,14 +28,14 @@ inquirer
     },
   ])
   .then((data) => {
-    const svgPath = './examples/svg.svg';
-    const finalLogo = renderShape(
+    const svgPath = './examples/logo.svg';
+    const finalLogo = makeShape(
       ({ logoName, textColour, logoColour, logoShape } = data)
     );
 
     //Generate the svg logo here.
     fs.writeFile(svgPath, generateSvg(finalLogo), (err) =>
-      err ? console.log(err) : console.log('Generated logo.svg')
+      err ? console.error(err) : console.log('Generated logo.svg')
     );
   })
   .catch((err) => console.error(err));
