@@ -28,8 +28,6 @@ inquirer
     },
   ])
   .then((data) => {
-    console.log(data);
-    // JSON.stringify(data);
     const svgPath = './examples/svg.svg';
     const finalLogo = renderShape(
       ({ logoName, textColour, logoColour, logoShape } = data)

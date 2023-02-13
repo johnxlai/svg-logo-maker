@@ -2,10 +2,10 @@ const Circle = require('../lib/circle');
 
 describe('Circle', () => {
   describe('Render Method', () => {
-    it('should render circle', () => {
-      const circle = new Circle('Jon');
+    it('should render circle string', () => {
+      const circle = new Circle('Jon', 'green', 'red');
       expect(circle.render()).toBe(
-        `<polygon points="150, 18 244, 182 56, 182" fill="blue" />`
+        `<circle cx="50" cy="50" r="50" fill="red" />`
       );
     });
   });
