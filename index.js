@@ -29,9 +29,7 @@ inquirer
   ])
   .then((data) => {
     const svgPath = './examples/logo.svg';
-    const finalLogo = makeShape(
-      ({ logoName, textColour, logoColour, logoShape } = data)
-    );
+    const finalLogo = makeShape(data);
 
     //Generate the svg logo here.
     fs.writeFile(svgPath, generateSvg(finalLogo), (err) =>
