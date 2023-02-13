@@ -1,7 +1,7 @@
 
     <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" width="300" height="200">
 
-      <circle cx="50" cy="50" r="50" fill="#208075" />
+      <polygon points="100 0, 0 ,0 50, 100" fill="green" />
 
-      <text x="50%" y="50%" text-anchor="middle" fill="#1a1a1a" font-size="2.3rem" letter-spacing="2" dy=".3em" font-family="monospace">che</text>
+      <text x="50%" y="40%" text-anchor="middle" fill="red" font-size="2.3rem" letter-spacing="2" dy=".3em" font-family="monospace">gor</text>
     </svg>
