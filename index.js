@@ -36,7 +36,7 @@ inquirer
     );
 
     //Generate the svg logo here.
-    fs.writeFile(svgPath, renderShape(finalLogo), (err) =>
+    fs.writeFile(svgPath, generateSvg(finalLogo), (err) =>
       err ? console.log(err) : console.log('Generated logo.svg')
     );
   })
