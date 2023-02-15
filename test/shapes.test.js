@@ -24,20 +24,20 @@ var testCases = [
     shouldRender: true,
   },
   {
-    desc: 'Validate background colour input',
+    desc: 'should add background colour if it is a valid color',
     input: { text: 'Ted', textColour: 'green', bgColour: 'purple' },
     expectedKey: 'bgColour',
     expectedValue: 'purple',
   },
   {
-    desc: 'should add colour if it is a valid color',
+    desc: 'should add text colour if it is a valid color',
     input: { text: 'Ted', textColour: 'red', bgColour: 'purple' },
     expectedKey: 'textColour',
     expectedValue: 'red',
   },
 ];
 describe('Shape test suite', () => {
-  for (var tc of testCases) {
+  for (let tc of testCases) {
     it(tc.desc, () => {
       let shape = () => new Shape(tc.input);
       if (tc.shouldRender) {
