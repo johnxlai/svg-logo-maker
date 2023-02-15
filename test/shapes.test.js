@@ -39,13 +39,14 @@ var testCases = [
 describe('Shape test suite', () => {
   for (let tc of testCases) {
     it(tc.desc, () => {
-      let shape = () => new Shape(tc.input);
       if (tc.shouldRender) {
+        const shape = new Shape(tc.input);
         expect(shape.render).toThrow(tc.expectedErr);
       } else if (tc.expectedErr) {
+        const shape = () => new Shape(tc.input);
         expect(shape).toThrow(tc.expectedErr);
       } else {
-        shape = new Shape(tc.input);
+        const shape = new Shape(tc.input);
         expect(shape[tc.expectedKey]).toBe(tc.expectedValue);
       }
     });
