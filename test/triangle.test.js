@@ -4,7 +4,7 @@ describe('Triangle', () => {
   describe('Render Method', () => {
     it('should return triangle string', () => {
       const triangle = new Triangle({
-        text: 'Mel',
+        logoName: 'Mel',
         textColour: 'purple',
         bgColour: '#000',
         logoShape: 'triangle',
